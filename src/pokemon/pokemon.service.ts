@@ -9,7 +9,6 @@ import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { Model, isValidObjectId } from 'mongoose';
 import { Pokemon } from './entities/pokemon.entity';
 import { InjectModel } from '@nestjs/mongoose';
-import { PokemonModule } from './pokemon.module';
 
 @Injectable()
 export class PokemonService {
@@ -83,7 +82,7 @@ export class PokemonService {
     if (deletedCount === 0) {
       throw new BadRequestException(`Pokemon with id "${id}" not found`);
     }
-    return; 
+    return;
   }
 
   private handleExceptions(error: any) {
